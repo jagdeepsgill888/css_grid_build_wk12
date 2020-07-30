@@ -1,4 +1,4 @@
-/* DEFAULTS */
+/* DEFAULTS  --these are  for mobile?  */
 
 * { border: 0; padding: 0; margin: 0; box-sizing: border-box; }
 
@@ -39,4 +39,63 @@ footer {
 background-color: black;
 color: white;
 padding: 2em;
+}
+
+/* breakpoint 1 -> this is tablet @ portrait 768*/
+@media screen and (min-width: 48em) {
+  .grid-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 2fr 1fr;
+
+    grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+
+    grid-gap: 1.5em;
+  }
+
+  .site-header {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .main-header {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .sidebar {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .footer {
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .site-header {
+    grid-column: 1/4;
+  }
+
+  .main-header {
+      grid-column: 1/3;
+    }
+
+  .sidebar {
+      grid-column: 2/4;
+      grid-row: 2/3;
+    }
+
+    .footer {
+      grid-column: 1/4;
+    }
 }
